@@ -32,4 +32,5 @@ const chatHistory = async (req, res) => {
         res.status(500).json({ msg: 'Failed to retrieve chat history' });
     }
 };
+//i need to fix this shit
 module.exports = { chatHistory };
