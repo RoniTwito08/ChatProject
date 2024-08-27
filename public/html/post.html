@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Page</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <button id="logout" class="logout-button">Logout</button>
+
+    <center>
+        <h1 class="chat-title">ChatWithMe</h1>
+        <div class="chat-container">
+            <div class="members-box">
+                <h3>Chat Members</h3>
+                <div class="chat-member" id="members">
+                    
+                </div>
+            </div>
+
+            <div class="chat-box">
+                <div class="chat-display" id="chat-display">
+                    <!-- Chat history will be dynamically loaded here -->
+                </div>
+                <div class="chat-input">
+                    <textarea rows="3" placeholder="Type your message..."></textarea>
+                    <button>Send</button>
+                </div>
+            </div>
+        </div>
+    </center>
+    <script src="/js/post.js"></script>
+</body>
+</html>

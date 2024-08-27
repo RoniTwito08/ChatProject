@@ -1,0 +1,298 @@
+body {
+    background-color: rgb(125, 210, 210);
+    font-family: Arial, sans-serif;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chat-title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(145deg, #007bff, #00aaff);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.chat-title::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: -10px;
+    bottom: -10px;
+    z-index: -1;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translate(3px, 3px);
+}
+
+.chat-container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ffffff;
+    margin-top: 5%;
+}
+
+.members-box {
+    width: 25%;
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.members-box h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.members-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.members-box li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.chat-box {
+    width: 75%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chat-input {
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.chat-input textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    resize: none;
+}
+
+.chat-input button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chat-input button:hover {
+    background-color: #0056b3;
+}
+
+.loginContainer {
+    width: 30%; 
+    margin-top: 3%;
+    padding: 20px; /* Added padding for better spacing inside the container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%; /* Increased height */
+    background-color: #f5f5f5;
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for better visual separation */
+}
+
+.loginContainer a {
+    text-decoration: none;
+    color: #007bff;
+    margin: 0 10px; /* Spacing between the links */
+}
+
+.loginContainer form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginContainer form input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.loginContainer form button {
+    width: 50%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.loginContainer form button:hover {
+    background-color: #0056b3;
+}
+
+.loginContainer .links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.loginContainer .links a {
+    margin: 0 15px; /* Adds space between the "Register" and "Forgot password" links */
+}
+
+.registerContainer {
+    width: 30%; 
+    margin-top: 3%;
+    padding: 20px; /* Padding for spacing inside the container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%; /* Similar height to the login container */
+    background-color: #f5f5f5;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visual separation */
+}
+
+.registerContainer a {
+    text-decoration: none;
+    color: #007bff;
+    margin: 0 10px; /* Spacing between the links */
+}
+
+.registerContainer form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.registerContainer form input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.registerContainer form button {
+    width: 50%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.registerContainer form button:hover {
+    background-color: #0056b3;
+}
+
+.registerContainer .links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.registerContainer .links a {
+    margin: 0 15px; /* Adds space between the "Back" link */
+}
+.logout-button {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #0056b3;
+}
+/* Existing styles remain unchanged */
+
+/* Chat Display Message Styling */
+.chat-display {
+    flex-grow: 1;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+}
+
+/* General message styles */
+.message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 60%;
+    clear: both;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for messages from the other person */
+.other-person {
+    background-color: #007bff; /* Blue background for other person's messages */
+    color: white;
+    float: left; /* Align to the left */
+    border-top-left-radius: 0; /* Make the top-left corner less rounded */
+}
+
+/* Styles for your messages */
+.my-message {
+    background-color: #e0e0e0; /* Grey background for your messages */
+    color: black;
+    float: right; /* Align to the right */
+    border-top-right-radius: 0; /* Make the top-right corner less rounded */
+}
+
+/* Clear floats after messages to prevent layout issues */
+.chat-display::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.chat-member {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.chat-member:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
