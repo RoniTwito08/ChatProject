@@ -80,7 +80,15 @@ const loggedUser = async (req, res) => {
         console.error('server eror');
         res.status(500).json({msg:'server eror'})
     }
-}
-        
+};
+const logoutbutton = async (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            return res.status(500).json({ msg: 'Failed to logout' });
+        }
+        res.clearCookie('connect.sid'); // Clear the session cookie
+        res.status(200).json({ msg: 'Logged out successfully' });
+    });
+};
 
-module.exports = { login, register,allUsers,loggedUser};
+module.exports = { login, register,allUsers,loggedUser,logoutbutton};
