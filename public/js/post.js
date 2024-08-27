@@ -1,3 +1,4 @@
+
 let user = ' ';
 
 function logoutbutton(){
@@ -39,44 +40,41 @@ function logedinuser(){
 
     }).catch(error=>console.error('erorr'));
 }
-function getChatHistory(toUser) {
-    
-    fetch(`/posts/chatHistory?toUser=${toUser}`)
-        .then(res => {
-            console.log('Response status:', res.status); 
-            if (!res.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return res.json();
-        })
+function getChatHistory(username) {
+    fetch('/posts/chatHistory')
+        .then(response => response.json())
         .then(data => {
-            
-            const chatDisplay = document.getElementById('chat-display');
-            chatDisplay.innerHTML = '';  
-
-            if (data.length === 0) {
-                chatDisplay.textContent = 'No chat history available';
-            } else {
-                data.forEach(chat => {
-                    const chatElement = document.createElement('div');
-                    chatElement.classList.add('chat-message');
-                    chatElement.textContent = `${chat.fromUser}: ${chat.content} (${new Date(chat.date).toLocaleString()})`;
-                    chatDisplay.appendChild(chatElement);
-                });
-            }
+            console.log(data);
+            data.forEach(post => {
+                if (post.fromUser === user && post.ToUser === username) {
+                    console.log(user);
+                    const messageElement = document.createElement('div');
+                    messageElement.className = 'my-message';
+                    messageElement.innerHTML = post.content;
+                    messagesList.appendChild(messageElement);
+                }
+                if (post.ToUser === user && post.fromUser === username) {
+                    const messageElement = document.createElement('div');
+                    messageElement.className = 'other-person';
+                    messageElement.innerHTML = post.content;
+                    messagesList.appendChild(messageElement);
+                }
+            });
         })
-        .catch(error => {
-            console.error('Failed to load chat history:', error); 
-            const chatDisplay = document.getElementById('chat-display');
-            chatDisplay.textContent = 'Failed to load chat history';
-        });
-}
+        .catch(error => console.error('Error fetching messages:', error));
+
 
 document.getElementById('members').addEventListener('click', (event) => {
     if (event.target.classList.contains('chat-member')) {
         const selectedUser = event.target.getAttribute('data-username');
         getChatHistory(selectedUser);
     }
+});
+};
+document.getElementById('members').addEventListener('click', (event) => {
+    username = event.target.getAttribute('data-username');
+    console.log(username);
+    getChatHistory(username);
 });
 
 logedinuser();
