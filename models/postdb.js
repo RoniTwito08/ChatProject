@@ -3,19 +3,19 @@ const mongoose = require('mongoose');
 const postSchema = new mongoose.Schema({
     title: {
         type: String,
-        required: true
+        required: true,
     },
     content: {
         type: String,
-        required: true
+        required: true,
     },
     fromUser: {
         type: String,
-        required: true
+        required: true,
     },
     ToUser : {
         type: String,
-        required: true
+        required: true,
     },
     date: {
         type: Date,

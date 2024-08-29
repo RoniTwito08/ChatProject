@@ -262,6 +262,7 @@ body {
     max-width: 60%;
     clear: both;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word ;
 }
 
 /* Styles for messages from the other person */
@@ -269,7 +270,9 @@ body {
     background-color: #007bff; /* Blue background for other person's messages */
     color: white;
     float: left; /* Align to the left */
-    border-top-left-radius: 0; /* Make the top-left corner less rounded */
+    border-top-left-radius: 0; 
+    text-align: left; /* Make the top-left corner less rounded */
+    margin-right: auto;
 }
 
 /* Styles for your messages */
@@ -278,6 +281,8 @@ body {
     color: black;
     float: right; /* Align to the right */
     border-top-right-radius: 0; /* Make the top-right corner less rounded */
+    text-align: right; /* Align text to the right */
+    margin-left: auto;
 }
 
 /* Clear floats after messages to prevent layout issues */
