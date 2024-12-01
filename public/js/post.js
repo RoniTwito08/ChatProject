@@ -53,7 +53,6 @@ function getChatHistory(selectedUser) {
     fetch('/posts/chatHistory')
         .then(response => response.json())
         .then(data => {
-            
             data.forEach(post => {
                 sender = post.fromUser;
                 receiver = post.ToUser;
